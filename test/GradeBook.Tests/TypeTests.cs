@@ -20,7 +20,7 @@ namespace GradeBook.Tests
         }
 
         [Fact]
-        public void Test1()
+        public void IntegersAreValueTypes()
         {
             int x = GetInt();
             SetInt(ref x);
@@ -33,7 +33,6 @@ namespace GradeBook.Tests
         }
 
         private int GetInt()
-
         {
             return 3;
         }
@@ -42,11 +41,11 @@ namespace GradeBook.Tests
         public void CSharpCanPassByRef()
         {
             Book book1 = new Book("Book 1");
-            GetBookSetName(ref book1,"New Name");
+            GetBookSetNameRef(ref book1,"New Name");
             Assert.Equal("New Name",book1.Name);
         }
 
-        private void GetBookSetName(ref Book book, string name)
+        private void GetBookSetNameRef(ref Book book, string name)
         {
             book = new Book(name);
         }
