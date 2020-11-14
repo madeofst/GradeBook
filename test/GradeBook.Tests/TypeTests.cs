@@ -7,6 +7,19 @@ namespace GradeBook.Tests
     {
         
         [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "Scott";
+            MakeUpperCase(name);
+            Assert.Equal("Scott",name);
+        }
+
+        private void MakeUpperCase(string parameterString)
+        {
+            parameterString.ToUpper();
+        }
+
+        [Fact]
         public void Test1()
         {
             int x = GetInt();
@@ -20,6 +33,7 @@ namespace GradeBook.Tests
         }
 
         private int GetInt()
+
         {
             return 3;
         }

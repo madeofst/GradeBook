@@ -21,6 +21,7 @@ namespace GradeBook.Tests
             Assert.Equal(46.5, result.minGrade,1);  
             Assert.Equal(89.4, result.maxGrade,1);
             Assert.Equal(71.1, result.avgGrade,1);
+            Assert.Equal('C',result.avgLetterGrade);
         }
     }
 }
