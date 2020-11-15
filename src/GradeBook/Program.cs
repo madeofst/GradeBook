@@ -20,11 +20,10 @@ namespace GradeBook
                     Console.WriteLine($"Sorry, {line} is not a valid grade value.");
                 }
             }
-            
+
             book.WriteStatsToConsole();
             Console.WriteLine("Press any key to exit.");
-            while((line = Console.ReadLine()) != ""){
-            }
+            while((line = Console.ReadLine()) != ""){};
         }
     }
 }
