@@ -98,3 +98,6 @@ C:\Users\Mike\dev\csharp\fundamentalsCourse\gradebook5\test\GradeBook.Tests\obj\
 C:\Users\Mike\dev\csharp\fundamentalsCourse\gradebook5\test\GradeBook.Tests\obj\Debug\net5.0\ref\GradeBook.Tests.dll
 C:\Users\Mike\dev\csharp\fundamentalsCourse\gradebook5\test\GradeBook.Tests\obj\Debug\net5.0\GradeBook.Tests.pdb
 C:\Users\Mike\dev\csharp\fundamentalsCourse\gradebook5\test\GradeBook.Tests\obj\Debug\net5.0\GradeBook.Tests.genruntimeconfig.cache
+C:\Users\Mike\dev\csharp\fundamentalsCourse\gradebook5\test\GradeBook.Tests\bin\Debug\net5.0\GradeBook.exe
+C:\Users\Mike\dev\csharp\fundamentalsCourse\gradebook5\test\GradeBook.Tests\bin\Debug\net5.0\GradeBook.dll
+C:\Users\Mike\dev\csharp\fundamentalsCourse\gradebook5\test\GradeBook.Tests\bin\Debug\net5.0\GradeBook.pdb
