@@ -14,6 +14,11 @@ namespace GradeBook
             
             ReadConsoleAndAddGrade(book);
             book.WriteStatsToConsole();
+
+            Console.WriteLine("Now please provide a log message.");
+            DelegateDemo logger = new DelegateDemo();
+            string message = Console.ReadLine();
+            logger.DoAllDelegateActions(message);
             
             ExitOnBlankLine();
         }
