@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "16GIBD8y1Bzgo+zhshAOeCulOKQ2bf0fZUni0/56rrjnVKrEx8/8j9Z9wbMUvDxqFZcwvdfe805KZwC6G9lcUg==",
+  "dgSpecHash": "cvqXFbPhdeS1zQUXkxhhK/tzGJJuv7x0fEqq65XVLuCo0Q40ESS3abBvLxqONb0noMYZ4ChRJLGPuUHLz9AOOA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Mike\\dev\\csharp\\fundamentalsCourse\\gradebook5\\test\\GradeBook.Tests\\GradeBook.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Mike\\dev\\csharp\\fundamentalsCourse\\gradebook5\\test\\GradeBook.Tests\\GradeBook.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mike\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\Mike\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",

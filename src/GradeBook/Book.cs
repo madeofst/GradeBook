@@ -15,6 +15,39 @@ namespace GradeBook
             Name = name;
         }
 
+        public void AddGrade(char letter)
+        {   
+            if(char.IsLetter(letter)){
+                double grade;
+                switch(letter)
+                {
+                    case 'A':
+                        grade = 90;
+                        break;
+                    case 'B':
+                        grade = 80;
+                        break;
+                    case 'C':
+                        grade = 70;
+                        break;
+                    case 'D':
+                        grade = 60;
+                        break;
+                    case 'E':
+                        grade = 50;
+                        break;
+                    default:
+                        grade = 40;
+                        break;
+                }
+                AddGrade(grade);
+            }
+            else
+            {
+                Console.WriteLine($"Sorry, but {letter} is not a valid grade.");
+            }
+        }
+
         public void AddGrade(double grade)
         {
             if(grade <= 100 && grade >= 0)
