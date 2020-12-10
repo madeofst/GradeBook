@@ -7,20 +7,13 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            Book book = new Book("Mike");
+            var book = new InMemoryBook("Mike");
+            book.GradeAdded += ActionWhenGradeAdded;
 
             Console.Clear();
-            Console.WriteLine("Please enter a numerical value between 0 and 100 and press enter to store. Press enter again when done.");
-            
-            ReadConsoleAndAddGrade(book);
+            ReadConsoleAndAddGrades(book);
             book.WriteStatsToConsole();
-
-            Console.WriteLine("Now please provide a log message.");
-            DelegateDemo logger = new DelegateDemo();
-            string message = Console.ReadLine();
-            logger.DoAllDelegateActions(message);
-            
-            ExitOnBlankLine();
+            ExitOnBlankLine();            
         }
 
         private static void ExitOnBlankLine()
@@ -30,8 +23,10 @@ namespace GradeBook
             while((line = Console.ReadLine()) != ""){};
         }
 
-        private static void ReadConsoleAndAddGrade(Book book)
+        private static void ReadConsoleAndAddGrades(IBook book)
         {
+            Console.WriteLine("Please enter a numerical value between 0 and 100 and press enter to store. Press enter again when done.");
+            
             string line;
             while((line = Console.ReadLine()) != ""){
                 if(double.TryParse(line, out double grade))
@@ -48,5 +43,17 @@ namespace GradeBook
             }
         }
 
+        static void ActionWhenGradeAdded(object sender, EventArgs e)
+        {
+            Console.WriteLine("A grade was added.");
+        }
+
+        static void Delegates()
+        {
+            Console.WriteLine("Now please provide a log message.");
+            DelegateDemo logger = new DelegateDemo();
+            string message = Console.ReadLine();
+            logger.DoAllDelegateActions(message);
+        }
     }
 }

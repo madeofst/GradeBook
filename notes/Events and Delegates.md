@@ -95,5 +95,53 @@ class DelegateDemo
 In the above case, when you call `DoAllDelegateActions` it runs both `JustCount` and `WriteLogAndCount`.  Sidenote - it only writes to console the return value of the last method added to the delegate invocation.  Not 100% on why this is, but I suspect it wouldn't make sense to able to return multiple values of the same type in a single variable (or something)?
 
 
-## Events
+## Delegates for events
 
+A convention in C# for writing delegates for events is that the delegate type takes two arguments:
+
+```cs
+public delegate void GradeAddedDelegate(object sender, EventArgs args);
+```
+
+You might want to define this in a separate file since it is a new type and technically, new types should go in their own files.
+
+You then want to add a field (a class variable) of that type to the class where you want to use it.  There is the 'event' keyword to use here:
+
+```cs
+public event GradeAddedDelegate GradeAdded;
+```
+
+It does something to make things safer.  It means you can only use += or -= when working with this field outside of the class itself.  The reason is that because multiple different parts of code might be using that event, so there could be different methods added from different parts of the code, all of which need to run.  If you allow full access, then any one part of the code could assign a null value (for instance) and wipe out the other methods added from elsewhere in the program.
+
+Think of this field as a container for multiple methods that will run? So when it's null, that means no methods have been added. Hence, when you call it:
+
+```cs
+//This code comes up after a grade is added.
+if (GradeAdded != null)
+{   
+    //The `this` keyword is passing the type (or class) the method is being called by.
+    GradeAdded(this, new EventArgs());
+}
+```
+
+Raising the event is invoking the delegate, handling the event is adding a method to the delegate.
+
+So now you got the delegate type defined, you've got a field in the `Book` class to hold this type and you're invoking it (calling its methods) at the appropriate time.  At this stage, GradeAdded will just be null so nothing will happen, but there is a structure in place to use when the book class is used in the program.
+
+So, when you want to write some code which will happen when a grade is added e.g. this code in the main method for example:
+
+```cs
+static void OnGradeAdded(object sender, EventArgs e)
+{
+    Console.WriteLine("A grade was added.");
+}
+```
+
+You can then call the public field from the instance of book and add this new method to it.  This method will then be called whenever a grade is added.
+
+```cs
+Book book = new Book("Mike");
+book.GradeAdded += OnGradeAdded;
+```
+
+ASP.net core doesn't really use events, however windows forms type software uses a lot of events.
